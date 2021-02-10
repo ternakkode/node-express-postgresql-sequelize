@@ -50,7 +50,7 @@ const create = async (req, res) => {
     try {
         let { title, content } = req.body
     
-        const note = Note.create({title, content})
+        const note = await Note.create({title, content})
     
         res.status(200).json({
             success: true,
@@ -69,7 +69,7 @@ const update = async (req, res) => {
     try {
         let { id, title, content } = req.body
     
-        const note = Note.update(
+        const note = await Note.update(
             { title, content }, 
             { where: { id } }
         );
