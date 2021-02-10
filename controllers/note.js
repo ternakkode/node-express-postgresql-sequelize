@@ -29,7 +29,7 @@ const create = async (req, res) => {
 
     res.status(200).json({
         success: true,
-        message: 'success get note data',
+        message: 'success create note data',
         data: note
     })
 }

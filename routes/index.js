@@ -2,6 +2,8 @@ const express = require('express')
 const route = express.Router();
 
 const noteController = require('../controllers/note')
+const noteValidationRules = require('../util/validation/note')
+const validationMiddleware = require('../middleware/validation')
 
 route.get('/', (req, res) => {
     res.json({
@@ -12,8 +14,8 @@ route.get('/', (req, res) => {
 
 route.get('/notes', noteController.all);
 route.get('/notes/:id', noteController.detail);
-route.post('/notes', noteController.create);
-route.put('/notes', noteController.update);
-route.delete('/notes', noteController.remove);
+route.post('/notes', noteValidationRules.create, validationMiddleware, noteController.create);
+route.put('/notes', noteValidationRules.update, validationMiddleware, noteController.update);
+route.delete('/notes', noteValidationRules.remove, validationMiddleware, noteController.remove);
 
 module.exports = route;
