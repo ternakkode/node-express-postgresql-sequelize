@@ -1,0 +1,28 @@
+{
+  "name": "firhan-post-orm",
+  "version": "0.0.1",
+  "description": "NodeJS REST API Using Express & Sequelize ORM (PostgreSQL Database)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index"
+  },
+  "keywords": [
+    "node",
+    "postgres",
+    "express",
+    "sequelize",
+    "orm",
+    "rest",
+    "restful",
+    "rest",
+    "api"
+  ],
+  "author": "M. Firhan Azmi Nor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "pg": "^8.5.1",
+    "sequelize": "^6.5.0"
+  }
+}
